@@ -1,8 +1,12 @@
 package solid.lsp.exercise;
 
-public class Rectangle {
+public class Rectangle implements Shape{
     private double width;
     private double height;
+
+    public Rectangle(){
+        super();
+    }
 
     public void setWidth(double width) {
         this.width = width;
@@ -20,6 +24,7 @@ public class Rectangle {
         return height;
     }
 
+    @Override
     public double calculateArea() {
         return width * height;
     }

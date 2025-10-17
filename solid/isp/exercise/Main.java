@@ -3,24 +3,27 @@ package solid.isp.exercise;
 public class Main {
 
     public static void main(String[] args) {
-        Vehicle car = new Car();
+        Drivable car = new Car();
         car.startEngine();
         car.stopEngine();
 
-        Vehicle airplane = new Airplane();
+        Airplane airplane = new Airplane();
         airplane.startEngine();
         airplane.fly();
-//        airplane.sail();
+        airplane.loadCargo();
 
-        Vehicle boat = new Boat();
+        Boat boat = new Boat();
+        boat.startEngine();
         boat.sail();
+        boat.loadCargo();
 
-        Vehicle truck = new Truck();
+        Truck truck = new Truck();
+        truck.startEngine();
         truck.loadCargo();
-//        truck.fly();
 
-        Vehicle motorcycle = new Motorcycle();
+        Drivable motorcycle = new Motorcycle();
         motorcycle.startEngine();
+        motorcycle.stopEngine();
     }
 
 }

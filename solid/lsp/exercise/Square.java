@@ -1,15 +1,22 @@
 package solid.lsp.exercise;
 
-public class Square extends Rectangle {
-    @Override
-    public void setWidth(double width) {
-        super.setWidth(width);
-        super.setHeight(width);
+public class Square implements Shape{
+    private double side;
+
+    public Square(){
+        super();
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
+
+    public double getSide(){
+        return side;
     }
 
     @Override
-    public void setHeight(double height) {
-        super.setWidth(height);
-        super.setHeight(height);
+    public double calculateArea(){
+        return side * side;
     }
 }

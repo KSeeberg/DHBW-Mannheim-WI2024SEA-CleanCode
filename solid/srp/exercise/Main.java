@@ -5,46 +5,46 @@ public class Main {
 	public static void main(String[] args) {
         ManagementSystem managementSystem = new ManagementSystem();
 
-        managementSystem.addEmployee("John Doe", 101, "Engineering");
-        managementSystem.updateEmployee(101, "Jonathan Doe");
-        managementSystem.removeEmployee(101);
+        managementSystem.getEmployeeManager().addEmployee("John Doe", 101, "Engineering");
+        managementSystem.getEmployeeManager().updateEmployee(101, "Jonathan Doe");
+        managementSystem.getEmployeeManager().removeEmployee(101);
 
-        managementSystem.processPayroll(102, 75000.50);
-        managementSystem.generatePayrollReport();
+        managementSystem.getPayrollManager().processPayroll(102, 75000.50);
+        managementSystem.getPayrollManager().generatePayrollReport();
 
-        managementSystem.assignProject(102, "AI Development");
-        managementSystem.completeProject(102, "AI Development");
-        managementSystem.generateProjectStatusReport("AI Development");
+        managementSystem.getEmployeeManager().assignProject(102, "AI Development");
+        managementSystem.getEmployeeManager().completeProject(102, "AI Development");
+        managementSystem.getReportService().generateProjectStatusReport("AI Development");
 
-        managementSystem.addCustomer("Alice Smith", "alice@example.com");
-        managementSystem.updateCustomer(201, "alice.smith@example.com");
-        managementSystem.sendPromotionalEmail(201, "50% Off Sale!");
-        managementSystem.removeCustomer(201);
+        managementSystem.getCustomerManager().addCustomer("Alice Smith", "alice@example.com");
+        managementSystem.getCustomerManager().updateCustomer(201, "alice.smith@example.com");
+        managementSystem.getCustomerManager().sendPromotionalEmail(201, "50% Off Sale!");
+        managementSystem.getCustomerManager().removeCustomer(201);
 
-        managementSystem.recordSale(202, 1500.75);
-        managementSystem.generateSalesReport();
+        managementSystem.getCustomerManager().recordSale(202, 1500.75);
+        managementSystem.getCustomerManager().generateSalesReport();
 
-        managementSystem.addInventoryItem("Laptop", 50);
-        managementSystem.updateInventoryItemQuantity("Laptop", 45);
-        managementSystem.generateInventoryReport();
-        managementSystem.removeInventoryItem("Laptop");
+        managementSystem.getInventoryManager().addInventoryItem("Laptop", 50);
+        managementSystem.getInventoryManager().updateInventoryItemQuantity("Laptop", 45);
+        managementSystem.getInventoryManager().generateInventoryReport();
+        managementSystem.getInventoryManager().removeInventoryItem("Laptop");
 
-        managementSystem.generateCompanyWideReport();
+        managementSystem.getReportService().generateCompanyWideReport();
 
-        managementSystem.connectToDatabase();
-        managementSystem.saveDataToDatabase("Sample data");
-        managementSystem.loadDataFromDatabase();
-        managementSystem.disconnectFromDatabase();
+        managementSystem.getSystemService().connectToDatabase();
+        managementSystem.getSystemService().saveDataToDatabase("Sample data");
+        managementSystem.getSystemService().loadDataFromDatabase();
+        managementSystem.getSystemService().disconnectFromDatabase();
 
-        managementSystem.saveReportToFile("Annual Report", "reports/annual_report.txt");
-        managementSystem.loadReportFromFile("reports/annual_report.txt");
+        managementSystem.getSystemService().saveReportToFile("Annual Report", "reports/annual_report.txt");
+        managementSystem.getSystemService().loadReportFromFile("reports/annual_report.txt");
 
-        managementSystem.sendEmail("admin@example.com", "System Update", "The system will undergo maintenance tonight.");
-        managementSystem.logEvent("System maintenance scheduled.");
-        managementSystem.sendSystemNotification("Reminder: Maintenance scheduled at 10 PM.");
-        managementSystem.printDocument("Company Policy Document");
+        managementSystem.getSystemService().sendEmail("admin@example.com", "System Update", "The system will undergo maintenance tonight.");
+        managementSystem.getSystemService().logEvent("System maintenance scheduled.");
+        managementSystem.getSystemService().sendSystemNotification("Reminder: Maintenance scheduled at 10 PM.");
+        managementSystem.getSystemService().printDocument("Company Policy Document");
 
-        managementSystem.shutdownSystem();
+        managementSystem.getSystemService().shutdownSystem();
 	}
 
 }
